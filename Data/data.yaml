@@ -1,0 +1,60 @@
+#name: "lili" # 冒号必须是英文格式，每个冒号后必须跟空格
+#
+#
+#"""yaml 对象"""
+##可以写入python的字典类型数据当作,某个yaml的key的值
+#data: {"name":"lili", "pwd":"1234"}
+##相同层级元素,左对齐
+#data1:
+#  name: "lili"
+#  pwd": "1234"
+#
+#
+#
+#data2:
+#  - "lili"
+#  - "name"
+#data3: ["123","456"]
+#data4:
+#  -name: "lili"
+#  -pwd: "123"
+#
+#"""纯量"""
+##字符串-特殊情况会在工作中看到,自动转换一部分数据类
+#name: lili
+##布尔 -yaml格式
+#bool1: ture
+#bool2: false
+##布尔-python格式
+#bllo3: Ture
+#bool4: false
+##整数 浮点数
+#int1: 122
+#float1: 12.00002
+
+##空类型
+##yaml
+#data8: ~
+#data11: null
+#data12: Null
+#data13:
+##python不支持
+# data9: None
+# data10: none
+
+##日期类型
+#date1: 2020-11-11 12:12:12
+#data2: 2020-11-11
+#date3: 12:12:12
+#date4: 2020-06-02 02:02:02
+#date5: 2020-06-12
+
+#"""锚点"""
+#解决重复使用yaml文件中某个相同的数据
+#标记锚点的位置,必须要有子节点
+#info: &data #标记锚点,相当于复制一份name和phone节点内容
+#  name: "lili"
+#  phone: "12345678"
+#addr:
+#  <<; *data #引用锚点,使用data锚点的值
+#  data1: "航渡路18号"
